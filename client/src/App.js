@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Grid from './components/Grid';
 import TopBar from './components/TopBar';
 import Generations from './components/Generations';
+import Controls from './components/Controls';
 import './App.css';
 
 class App extends Component {
@@ -47,6 +48,19 @@ class App extends Component {
 		clearInterval(this.intervalId);
 		this.intervalId = setInterval(this.play, this.speed);
 	};
+
+	pauseButton = () => {
+		clearInterval(this.intervalId);
+  };
+  
+  clear = () => {
+    var grid = Array(this.rows)
+    .fill()
+    .map(() => Array(this.cols).fill(false))
+    this.setState({gridFull: grid, generation: 0})
+  }
+
+
 	play = () => {
 		let g = this.state.gridFull;
 		let g2 = arrayClone(this.state.gridFull);
@@ -82,6 +96,13 @@ class App extends Component {
 		return (
 			<div>
 				<TopBar />
+				<Controls
+					playButton={this.playButton}
+					pauseButton={this.pauseButton}
+					clear={this.clear}
+					seedBoard={this.seedBoard}
+					gridSize={this.gridSize}
+				/>
 				<Grid
 					gridFull={this.state.gridFull}
 					rows={this.rows}
