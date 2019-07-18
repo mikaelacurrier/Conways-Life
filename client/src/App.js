@@ -60,6 +60,15 @@ class App extends Component {
 		this.setState({ gridFull: grid, generation: 0 });
 	};
 
+	slow = () => {
+		this.speed = 1000;
+		this.playButton();
+	};
+	fast = () => {
+		this.speed = 100;
+		this.playButton();
+	};
+
 	play = () => {
 		let g = this.state.gridFull;
 		let g2 = arrayClone(this.state.gridFull);
@@ -101,6 +110,8 @@ class App extends Component {
 					clear={this.clear}
 					seedBoard={this.seedBoard}
 					gridSize={this.gridSize}
+					fast={this.fast}
+					slow={this.slow}
 				/>
 				<Grid
 					gridFull={this.state.gridFull}

@@ -40,6 +40,8 @@ class Controls extends Component {
 				{play_pause}
 				<button onClick={this.props.clear}>Clear</button>
 				<button onClick={this.props.seedBoard}>Seed</button>
+				<button onClick={this.props.fast}>Fast</button> 
+				<button onClick={this.props.slow}>Slow</button>
 			</div>
 		);
 	}
