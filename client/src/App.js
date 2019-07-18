@@ -51,15 +51,14 @@ class App extends Component {
 
 	pauseButton = () => {
 		clearInterval(this.intervalId);
-  };
-  
-  clear = () => {
-    var grid = Array(this.rows)
-    .fill()
-    .map(() => Array(this.cols).fill(false))
-    this.setState({gridFull: grid, generation: 0})
-  }
+	};
 
+	clear = () => {
+		var grid = Array(this.rows)
+			.fill()
+			.map(() => Array(this.cols).fill(false));
+		this.setState({ gridFull: grid, generation: 0 });
+	};
 
 	play = () => {
 		let g = this.state.gridFull;
