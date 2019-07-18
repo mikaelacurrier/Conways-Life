@@ -1,5 +1,5 @@
 body {
-	background: darkorange;
+	background: #a6e0b9;
 }
 
 .box {
@@ -12,15 +12,15 @@ body {
 }
 
 .off {
-	background-color: lightgray;
+	background-color: #f7e2d3;
 }
 
 .on {
-	background-color: green;
+	background-color: #fc8345;
 }
 
 .box:hover {
-	background: #00ccff;
+	background: #cde4c5;
 }
 
 .center {
@@ -48,6 +48,14 @@ h4 {
 	margin-top: 10px;
 }
 
-h4 {
-	margin-top: 0px;
+.controls {
+	display: flex;
+	justify-content: center;
+}
+
+.controls button {
+	margin: 20px;
+	padding: 0 15px;
+	border: none;
+	background-color: white;
 }

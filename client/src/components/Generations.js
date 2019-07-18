@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Generations = props => {
-	return <div>Generations: {props.generations}</div>;
+	return <h3>Generations: {props.generations}</h3>;
 };
 
 export default Generations;

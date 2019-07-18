@@ -9,10 +9,10 @@ class Controls extends Component {
 	}
 	changePlayPause = e => {
 		if (e.target.name === 'play') {
-			this.setState({ play: false });
+			this.setState({ play: true });
 			this.props.playButton();
 		} else {
-			this.setState({ play: true });
+			this.setState({ play: false });
 			this.props.pauseButton();
 		}
 	};
@@ -28,9 +28,15 @@ class Controls extends Component {
 					Play
 				</button>
 			);
+		} else {
+			play_pause = (
+				<button onClick={this.changePlayPause} name="pause">
+					Pause
+				</button>
+			);
 		}
 		return (
-			<div>
+			<div className="controls">
 				{play_pause}
 				<button onClick={this.props.clear}>Clear</button>
 				<button onClick={this.props.seedBoard}>Seed</button>
